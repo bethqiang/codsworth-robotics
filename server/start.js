@@ -34,13 +34,10 @@ module.exports = app
   .use(passport.initialize())
   .use(passport.session())
 
-  // Serve static files from node_modules for Bootstrap
-  .use(express.static(resolve(__dirname, '..', 'node_modules')))
   // Serve static files from ../public
   .use(express.static(resolve(__dirname, '..', 'public')))
 
-  // Serve static files for Bootstrap and JQuery
-  .use('/bootstrap', express.static(resolve(__dirname, '..', 'node_modules/bootstrap/dist')))
+  // Serve static files for JQuery
   .use('/jquery', express.static(resolve(__dirname, '..', 'node_modules/jquery/dist')))
 
   // Serve our api
