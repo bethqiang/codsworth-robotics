@@ -1,50 +1,41 @@
-
 .navbar {
-  border-radius: 0;
-  margin-bottom: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  background-color: #7DA4D2;
+  font-weight: 300;
 }
 
-.navbar-default {
-  border-color: #ccc;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  width: inherit;
-  margin-left: auto;
-  margin-right: auto;
+.navbar .brand a {
+  display: block;
+  margin-top: 13px;
+  margin-bottom: 13px;
+  text-decoration: none;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 24px;
+  letter-spacing: 1.5px;
 }
 
-.navbar-form {
-  @media (min-width: 1010px) {
-    margin-left: 35px;
-  }
-  .btn-default {
-    border-left: 0;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-  }
-  .form-group > .form-control {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-}
-.dropdown-menu > li > b {
-  text-align: center;
+.navbar ul {
+  float: right;
+  padding: 0;
+  margin: 0;
 }
 
-.dropdown-menu > .navbar-form {
-  margin-left: 0;
-  .btn-default {
-    border: 1px solid transparent;
-    border-top: 0;
-    border-color: #ccc;
-    border-radius: 0 0 4px 4px;
-
-  }
-  .form-password {
-    border-bottom-right-radius: 0;
-  }
+.navbar li {
+  list-style-type: none;
+  display: inline-block;
+  padding-left: 25px;
 }
 
-i.fa.fa-shopping-cart.active {
-  color: #337ab7;
+.navbar li a {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-decoration: none;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1px;
 }

@@ -1,27 +1,13 @@
 body {
-  background: #DDE1E6; }
+  margin: 0;
+  background: #DDE1E6;
+  font-family: 'Lato', sans-serif; }
 
 .center {
   text-align: center; }
 
 .align-right {
   text-align: right; }
-
-.dropdown-menu > li > b {
-  display: block;
-  padding: 3px 20px;
-  clear: both;
-  line-height: 1.42857143;
-  color: #333;
-  white-space: nowrap;
-  font-size: 16px; }
-
-h1, .h1, h2, .h2, h3, .h3 {
-  font-weight: 300; }
-
-.container {
-  padding-left: 0;
-  padding-right: 0; }
 
 #main.container {
   margin-top: 50px; }

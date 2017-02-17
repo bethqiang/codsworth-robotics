@@ -14,14 +14,16 @@ const Navbar = props => {
   };
   return (
     <nav className="navbar">
-      <div className="container-fluid">
-        <IndexLink to="/">Codsworth Robotics</IndexLink>
+      <div className="container">
+        <div className="pull-left brand">
+          <IndexLink to="/">Codsworth Robotics</IndexLink>
+        </div>
+        <ul>
+          <li><Link to="/products">Shop</Link></li>
+          <li><Link to="#">Account</Link></li>
+          <li><Link to="/cart">Cart {props.cart.products.length > 0 ? `(${calcCartQuantity()})` : null}</Link></li>
+        </ul>
       </div>
-      <ul>
-        <li>Shop</li>
-        <li>Account</li>
-        <li><Link to="/cart">Cart {props.cart.products.length > 0 ? `(${calcCartQuantity()})` : null}</Link></li>
-      </ul>
     </nav>
   );
 };

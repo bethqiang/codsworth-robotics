@@ -4,9 +4,9 @@ import Navbar from './Navbar';
 
 export default function (props) {
   return (
-    <div id="main" className="container">
+    <div>
       <Navbar />
-      <div className="col-xs-12">
+      <div>
         {
           props.children && React.cloneElement(props.children, props)
         }
