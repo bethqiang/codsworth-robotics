@@ -52,7 +52,7 @@ render(
         <Route path="/checkout/success" component={SuccessfulOrder} />
         <Route path="/products" component={BrowseProducts} onEnter={onBrowse} />
         <Route path="/products/:id" component={ProductDetail} onEnter={setProduct} />
-        <Redirect from='/logout' to='/home' />
+        <Redirect from="/logout" to="/" />
       </Route>
     </Router>
   </Provider>,
