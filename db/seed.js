@@ -9,11 +9,17 @@ const seedUsers = () => db.Promise.map([
 ], user => db.model('users').create(user));
 
 const seedProducts = () => db.Promise.map([
-  {name: 'Codsworth', description: 'The robot from Fallout now in your home!', price: 90025, images: ['http://vignette1.wikia.nocookie.net/fallout/images/8/80/Codsworth_model.png/revision/latest?cb=20160227140409'], category: ['butler', 'gardener', 'chef'], inventory: 100},
-  {name: 'C3PO', description: 'Fluent in over six million forms of communication', price: 1700000, images: ['https://upload.wikimedia.org/wikipedia/en/5/5c/C-3PO_droid.png'], category: ['butler', 'household', 'translator'], inventory: 1},
-  {name: 'Dot Matrix', description: 'Perfect for the runaway rebellious princess in your life!', price: 12345, images: ['https://s-media-cache-ak0.pinimg.com/736x/48/d7/21/48d721c8b21e87e70f79779c3442a290.jpg'], category: ['maid', 'household', 'chef', 'royalty'], inventory: 0},
-  {name: 'Bending Unit 22', description: 'Runs on alcohol and the wallets of passerbys.', price: 300000, images: ['https://upload.wikimedia.org/wikipedia/en/a/a6/Bender_Rodriguez.png'], category: ['industrial', 'social'], inventory: 1000000},
-  {name: 'Marvin', description: 'Comes with the all new Genuine People Personalities technology pre-installed!', price: 4200, images: ['https://s-media-cache-ak0.pinimg.com/originals/cc/9a/c5/cc9ac53b36a3a9f0dd341d767d5e6fe7.png', 'http://img06.deviantart.net/dcf6/i/2005/220/2/7/marvin__the_paranoid_android_by_mozzzca.jpg'], category: ['butler', 'chef', 'social', 'industrial'], inventory: 1}
+  {name: 'Cat Bot', shortDescription: 'A cat that can change its own litter box.', fullDescription: 'TBD', price: 30000, images: ['/images/cat-bot.png'], category: ['pet'], inventory: 100},
+  {name: 'Cute Bot', shortDescription: 'Something cute to look at and entertain you.', fullDescription: 'TBD', price: 18000, images: ['/images/cute-bot.png'], category: ['pet'], inventory: 100},
+  {name: 'Dance Bot', shortDescription: 'Learn to dance without making a fool of yourself.', fullDescription: 'TBD', price: 66000, images: ['/images/dance-bot.png'], category: ['sport'], inventory: 100},
+  {name: 'Hug Bot', shortDescription: 'Because hugs make everything better.', fullDescription: 'TBD', price: 24000, images: ['/images/hug-bot.jpg'], category: ['emotional'], inventory: 100},
+  {name: 'Pet Sitter Bot', shortDescription: 'Take the pain out of finding someone to watch Fido.', fullDescription: 'TBD', price: 48000, images: ['/images/pet-sitter-bot.png'], category: ['pet'], inventory: 100},
+  {name: 'Posture Bot', shortDescription: 'Let Posture Bot help you help your back.', fullDescription: 'TBD', price: 36000, images: ['/images/posture-bot.png'], category: ['health'], inventory: 100},
+  {name: 'Productivity Bot', shortDescription: 'Never answer another useless email again.', fullDescription: 'TBD', price: 90000, images: ['/images/productivity-bot.jpg'], category: ['productivity'], inventory: 100},
+  {name: 'Seasonal Bot', shortDescription: 'Your personal decorator for every holiday.', fullDescription: 'TBD', price: 28000, images: ['/images/seasonal-bot.png'], category: ['decorator'], inventory: 100},
+  {name: 'Security Bot', shortDescription: 'A personal bodyguard for the home and beyond.', fullDescription: 'TBD', price: 96000, images: ['/images/security-bot.jpg'], category: ['security'], inventory: 100},
+  {name: 'Trainer Bot', shortDescription: 'We get it, motivating yourself to exercise is hard.', fullDescription: 'TBD', price: 66000, images: ['/images/trainer-bot.png'], category: ['sport', 'health'], inventory: 100},
+  {name: 'Wall-E', shortDescription: 'A friend who\'s willing to pick up after you.', fullDescription: 'TBD', price: 50000, images: ['/images/wall-e.jpg'], category: ['cleaner'], inventory: 100}
 ], product => db.model('products').create(product));
 
 let userArr, productArr;

@@ -15,7 +15,13 @@ const Product = db.define('products', {
       notEmpty: true
     }
   },
-  description: {
+  shortDescription: {
+    type: Sequelize.STRING,
+    validate: {
+      notEmpty: true
+    }
+  },
+  fullDescription: {
     type: Sequelize.TEXT,
     validate: {
       notEmpty: true
@@ -63,6 +69,5 @@ const Product = db.define('products', {
     }
   }
 });
-
 
 module.exports = Product;
