@@ -4,7 +4,7 @@ import { Router, Route, IndexRedirect, browserHistory, Redirect } from 'react-ro
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import App from './containers/App';
+import App from './components/App';
 import Home from './components/Home';
 import Orders from './components/Orders';
 import Cart from './components/Cart';

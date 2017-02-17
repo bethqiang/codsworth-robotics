@@ -1,11 +1,11 @@
 import React from 'react';
 
-import NavbarContainer from '../containers/NavbarContainer';
+import Navbar from './Navbar';
 
 export default function (props) {
   return (
     <div id="main" className="container">
-      <NavbarContainer />
+      <Navbar />
       <div className="col-xs-12">
         {
           props.children && React.cloneElement(props.children, props)

@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link, IndexLink } from 'react-router';
+import { Link, IndexLink, browserHistory } from 'react-router';
+import { connect } from 'react-redux';
+
 import WhoAmI from './WhoAmI';
 import Login from './Login';
+import { changeSearchValue, submitSearch } from '../reducers/search';
 
-
-export default function (props) {
+const Navbar = props => {
   const calcCartQuantity = () => {
     let total = 0;
     for (let i = 0; i < props.cart.products.length; i++) {
@@ -56,4 +58,25 @@ export default function (props) {
       </div>{ /* /.container-fluid */ }
     </nav>
   );
-}
+};
+
+const mapStateToProps = state => {
+  return {
+    user: state.auth,
+    searchValue: state.filtertext.searchValue,
+    cart: state.cart
+  };
+};
+
+const mapDispatchToProps = dispatch => ({
+  handleChange (event) {
+    dispatch(changeSearchValue(event.target.value));
+  },
+  handleSubmit (event) {
+    event.preventDefault();
+    dispatch(submitSearch());
+    browserHistory.push(`/products`);
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
