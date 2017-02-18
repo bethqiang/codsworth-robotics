@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
+import { priceString } from 'APP/app/utils';
+
 const Home = props => {
   const topProducts = props.topProducts;
   return (
@@ -14,7 +16,19 @@ const Home = props => {
         <div className="row">
           {topProducts.map(bot => (
             <div className="col-md-4" key={bot.id}>
-              <p>{bot.name}</p>
+              <Link to={'/products/' + bot.id}>
+                <div className="card">
+                  <img className="card-image" src={bot.images[0]} />
+                  <div className="row">
+                    <div className="col-md-8">
+                      <h3>{bot.name}</h3>
+                    </div>
+                    <div className="col-md-4">
+                      <h3 className="pull-right">${priceString(bot.price)}</h3>
+                    </div>
+                  </div>
+                </div>
+              </Link>
             </div>
           ))}
         </div>

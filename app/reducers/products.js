@@ -42,7 +42,6 @@ export const loadProducts = (id = null) => {
       dispatch(getProducts(products));
       // Set top products
       const topProducts = products.filter(product => {
-        console.log(product);
         return (product.name === 'Productivity Bot') || (product.name === 'Trainer Bot') || (product.name === 'Wall-E');
       });
       dispatch(getTopProducts(topProducts));

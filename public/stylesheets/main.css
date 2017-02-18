@@ -25,11 +25,30 @@ h1 {
   width: 132px;
   font-size: 18px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
+  .standalone-link-div .standalone-link {
+    display: inline-block;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 300; }
 
-.standalone-link {
-  display: inline-block;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-decoration: none;
-  color: #FFFFFF;
-  font-weight: 300; }
+.card {
+  background: #FFFFFF;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-top: 0; }
+  .card .card-image {
+    display: block;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 1px solid #979797; }
+  .card h3 {
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #000000; }

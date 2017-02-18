@@ -36,7 +36,7 @@ const setProduct = function (nextRouterState) {
   } else {
     store.dispatch(
       setSelectedProduct(
-        store.getState().products.find(product => {
+        store.getState().products.all.find(product => {
           return (product.id === (+nextRouterState.params.id));
         })
       )
