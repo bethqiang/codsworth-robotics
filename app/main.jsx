@@ -49,7 +49,7 @@ render(
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRedirect to="/home" />
-        <Route path="/home" component={Home} />
+        <Route path="/home" component={Home} onEnter={onBrowse} />
         <Route path="/orders" component={Orders} />
         <Route path="/cart" component={Cart} onEnter={onCartEnter} />
         <Route path="/checkout/success" component={SuccessfulOrder} />

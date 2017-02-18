@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
 const Home = props => {
-  const topPicks = ['Trainer Bot', 'Productivity Bot', 'Hug Bot'];
+  const topProducts = props.topProducts;
   return (
     <div>
       <img className="home-image" src="/images/home.jpg" />
@@ -11,9 +12,9 @@ const Home = props => {
           <h1>Our Top Picks</h1>
         </div>
         <div className="row">
-          {topPicks.map(bot => (
-            <div className="col-md-4" key={bot}>
-              <p>{bot}</p>
+          {topProducts.map(bot => (
+            <div className="col-md-4" key={bot.id}>
+              <p>{bot.name}</p>
             </div>
           ))}
         </div>
@@ -25,4 +26,13 @@ const Home = props => {
   );
 };
 
-export default Home;
+const mapStateToProps = state => {
+  return {
+    topProducts: state.products.top
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(Home);

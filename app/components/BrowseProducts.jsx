@@ -42,7 +42,7 @@ export const BrowseProducts = (props) => {
 
 const mapStateToProps = state => {
   return {
-    products: state.products,
+    products: state.products.all,
     searchTerm: state.filtertext
   };
 };
