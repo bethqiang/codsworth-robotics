@@ -10,7 +10,7 @@
     "build-watch": "bin/setup && webpack -w",
     "start": "webpack && bin/setup && nodemon server/start.js",
     "seed": "node db/seed.js",
-    "build-css": "node-sass -w public/stylesheets/ -o public/stylesheets/"
+    "build-css": "node-sass -w app/sass/ -o public/stylesheets/"
   },
   "repository": {
     "type": "git",
