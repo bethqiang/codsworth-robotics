@@ -1,10 +1,11 @@
 'use strict';
 import React from 'react';
-import { Router, Route, browserHistory, Redirect } from 'react-router';
+import { Router, Route, browserHistory, IndexRedirect, Redirect } from 'react-router';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './store';
 import App from './components/App';
+import Home from './components/Home';
 import Orders from './components/Orders';
 import Cart from './components/Cart';
 import SuccessfulOrder from './components/SuccessfulOrder';
@@ -47,6 +48,8 @@ render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
+        <IndexRedirect to="/home" />
+        <Route path="/home" component={Home} />
         <Route path="/orders" component={Orders} />
         <Route path="/cart" component={Cart} onEnter={onCartEnter} />
         <Route path="/checkout/success" component={SuccessfulOrder} />
