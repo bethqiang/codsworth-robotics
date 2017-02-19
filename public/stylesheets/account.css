@@ -1,0 +1,76 @@
+.account {
+  position: relative;
+  height: 300px;
+  width: 320px;
+  margin: 125px auto 70px auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgba(25, 25, 25, 0.75);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  text-align: center; }
+  .account .form-control {
+    padding: 10px 20px;
+    display: block;
+    margin: 15px auto;
+    width: 210px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0);
+    overflow: hidden;
+    transition: all 0.5s ease-in-out; }
+    .account .form-control:focus {
+      outline: 0;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      background: transparent;
+      opacity: 0.6; }
+  .account input {
+    display: inline-block;
+    padding-top: 20px;
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Lato', 'sans-serif'; }
+  .account button {
+    font-size: 16px;
+    transition: all 0.25s ease-in-out;
+    width: 210px;
+    height: 41px;
+    border-radius: 5px; }
+  .account a {
+    text-decoration: none;
+    color: #7DA4D2; }
+
+/* Border radius */
+.account,
+.form-control,
+.form-control:focus {
+  border-radius: 5px; }
+
+/* The `or-divider` is the thingy that divides the login box from the sign up link */
+.or-divider {
+  overflow: hidden;
+  text-align: center;
+  margin: 20px 20px;
+  color: #A9A9A9; }
+
+.or-divider:before,
+.or-divider:after {
+  background-color: #A9A9A9;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%; }
+
+.or-divider:before {
+  right: 0.5em;
+  margin-left: -50%; }
+
+.or-divider:after {
+  left: 0.5em;
+  margin-right: -50%; }
+
+.logout {
+  font-size: 8px;
+  text-decoration: none;
+  color: #2F75B8; }

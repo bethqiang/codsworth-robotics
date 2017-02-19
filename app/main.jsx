@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import App from './components/App';
 import Home from './components/Home';
+import Login from './components/Login';
 import Orders from './components/Orders';
 import Cart from './components/Cart';
 import SuccessfulOrder from './components/SuccessfulOrder';
@@ -14,7 +15,6 @@ import BrowseProducts from './components/BrowseProducts';
 
 import { loadProducts, setSelectedProduct, loadReviews } from './reducers/products';
 import { loadCart } from './reducers/cart';
-
 
 const onBrowse = function () {
   store.dispatch(loadProducts());
@@ -47,6 +47,7 @@ render(
       <Route path="/" component={App}>
         <IndexRedirect to="/home" />
         <Route path="/home" component={Home} onEnter={onBrowse} />
+        <Route path="/login" component={Login} />
         <Route path="/orders" component={Orders} />
         <Route path="/cart" component={Cart} onEnter={onCartEnter} />
         <Route path="/checkout/success" component={SuccessfulOrder} />

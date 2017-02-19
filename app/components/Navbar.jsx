@@ -20,7 +20,7 @@ const Navbar = props => {
         </div>
         <ul>
           <li><Link to="/products">Shop</Link></li>
-          <li><Link to="#">Account</Link></li>
+          <li><Link to={props.user && props.user.id ? '/orders' : '/login'}>Account</Link></li>
           <li><Link to="/cart">Cart {props.cart.products.length > 0 ? `(${calcCartQuantity()})` : null}</Link></li>
         </ul>
       </div>
