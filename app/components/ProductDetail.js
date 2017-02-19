@@ -1,34 +1,48 @@
 import React from 'react';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
-import { addToCart } from 'APP/app/reducers/cart';
-
-import { ProductDetailImageViewer } from './ProductDetailImageViewer';
 import ProductReviews from './ProductReviews';
-import { ProductDetailText } from './ProductDetailText';
 
+import { addToCart } from 'APP/app/reducers/cart';
+import { priceString } from 'APP/app/utils';
 
-export const ProductDetail = (props) => (
-  <div className="container-fluid product-detail-container">
-  {
-    props.selectedProduct.name && (
-      <div>
-        <div className="row">
-            <div className="col-sm-3">
-              <ProductDetailText selectedProduct={props.selectedProduct} addToCart={props.addToCart}/>
+const ProductDetail = props => {
+  return (
+    <div className="container product-detail">
+      {props.selectedProduct.id && (
+        <div>
+          <div className="row">
+            <div className="col-md-5">
+              <img className="product-image" src={props.selectedProduct.images[0]} />
             </div>
-            <div className="col-sm-9">
-              <ProductDetailImageViewer selectedProduct={props.selectedProduct} />
+            <div className="col-md-7">
+              <div className="product-info">
+                <h1>{props.selectedProduct.name}</h1>
+                <h3>${priceString(props.selectedProduct.price)}</h3>
+                <p>{props.selectedProduct.fullDescription}</p>
+                <div className="standalone-link-div center">
+                  {props.selectedProduct.inventory > 0
+                    ? <Link className="standalone-link" to="#"
+                      onClick={e => {
+                        e.preventDefault();
+                        props.addToCart(props.selectedProduct.id);
+                      }}>
+                      Add to Cart
+                    </Link>
+                    : <button className="pull-left btn btn-disabled" disabled="true">Out of Stock</button>}
+                </div>
+              </div>
             </div>
+          </div>
+          <div className="row">
+            <ProductReviews />
+          </div>
         </div>
-        <div className="row">
-          <ProductReviews />
-        </div>
-      </div>
-      )
-  }
+      )}
   </div>
-);
+  );
+};
 
 const mapStateToProps = state => {
   return {
