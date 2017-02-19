@@ -31,16 +31,13 @@ const onCartEnter = function () {
 //   after first loading all products
 const setProduct = function (nextRouterState) {
   store.dispatch(loadReviews(+nextRouterState.params.id));
-  if (store.getState().products.length === 0) {
+  if (store.getState().products.all.length === 0) {
     store.dispatch(loadProducts(+nextRouterState.params.id));
   } else {
-    store.dispatch(
-      setSelectedProduct(
-        store.getState().products.all.find(product => {
-          return (product.id === (+nextRouterState.params.id));
-        })
-      )
+    const selectedProduct = store.getState().products.all.find(product =>
+      product.id === (+nextRouterState.params.id)
     );
+    store.dispatch(setSelectedProduct(selectedProduct));
   }
 };
 
