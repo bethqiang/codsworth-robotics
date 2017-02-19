@@ -8,9 +8,11 @@ import { priceString } from 'APP/app/utils';
 
 const Cart = props => {
   return (
-    <div className="cart-container">
-      <h1>Your Cart</h1>
-      <div className="cart">
+    <div className="container cart">
+      <div className="center">
+        <h1>Your Cart</h1>
+      </div>
+      <div className="card">
         {props.cart.products.map(product => (
           <CartProduct key={product.id}
             product={product}
@@ -18,27 +20,29 @@ const Cart = props => {
             deleteProduct={props.deleteProduct} />
         ))}
       </div>
-      <div className="cart order-total center">
-        <h3>Order Total: ${priceString(props.cart.total)}</h3>
+      <div className="card order-total center">
+        <h2>Order Total: ${priceString(props.cart.total)}</h2>
       </div>
-      <h1>Your Information</h1>
-      <div className="cart">
-        <form className="form-group" onSubmit={evt => {
+      <div className="center">
+        <h1>Your Information</h1>
+      </div>
+      <div className="card">
+        <form onSubmit={evt => {
           evt.preventDefault();
           props.checkout(
             evt.target.email.value,
             evt.target.shippingAddress.value
           );
         }}>
-          <div className="input-group checkout-information">
+          <div className="checkout-information">
             <label htmlFor="email">Preferred Email:</label>
-            <input name="email" type="email" className="form-control" placeholder="example@example.com" />
+            <input name="email" type="email" placeholder="example@example.com" />
           </div>
-          <div className="input-group checkout-information">
+          <div className="checkout-information">
             <label htmlFor="address">Shipping Address:</label>
-            <input name="shippingAddress" type="address" className="form-control" placeholder="1234 Example Lane, Candyland, NY 10000" />
+            <input name="shippingAddress" type="address" placeholder="1234 Example Lane, Candyland, NY 10000" />
           </div>
-          <button type="submit" className="btn btn-success button-radius">Checkout</button>
+          <button className="checkout-button" type="submit">Checkout</button>
         </form>
       </div>
     </div>
