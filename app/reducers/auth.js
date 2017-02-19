@@ -18,7 +18,10 @@ export const signup = (firstName, lastName, username, password) =>
   dispatch =>
     axios.post('/api/auth/local/signup',
       {firstName, lastName, username, password})
-      .then(() => dispatch(whoami()))
+      .then(() => {
+        dispatch(whoami());
+        browserHistory.push('/orders');
+      })
       .catch(() => dispatch(whoami()));
 
 export const login = (username, password) =>

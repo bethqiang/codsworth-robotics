@@ -7,6 +7,7 @@ import store from './store';
 import App from './components/App';
 import Home from './components/Home';
 import Login from './components/Login';
+import Signup from './components/Signup';
 import Orders from './components/Orders';
 import Cart from './components/Cart';
 import SuccessfulOrder from './components/SuccessfulOrder';
@@ -48,6 +49,7 @@ render(
         <IndexRedirect to="/home" />
         <Route path="/home" component={Home} onEnter={onBrowse} />
         <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
         <Route path="/orders" component={Orders} />
         <Route path="/cart" component={Cart} onEnter={onCartEnter} />
         <Route path="/checkout/success" component={SuccessfulOrder} />

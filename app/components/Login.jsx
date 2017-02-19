@@ -29,7 +29,6 @@ const Login = props => {
         </form>
         <p className="or-divider">or</p>
         <Link to="/signup">Sign Up</Link>
-        {/*<a href="#" onClick={this.props.logout} className="logout">Log Out</a>*/}
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 .account {
   position: relative;
-  height: 300px;
   width: 320px;
   margin: 125px auto 70px auto;
   padding-top: 20px;
@@ -41,7 +40,7 @@
     transition: all 0.25s ease-in-out;
     width: 210px;
     height: 41px;
-    border-radius: 5px;
+    border-radius: 2px;
   }
 
   a {
@@ -55,7 +54,7 @@
 .account,
 .form-control,
 .form-control:focus {
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 /* The `or-divider` is the thingy that divides the login box from the sign up link */
