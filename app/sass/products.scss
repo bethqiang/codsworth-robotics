@@ -43,3 +43,20 @@
     }
   }
 }
+
+.reviews {
+  margin-top: 30px;
+
+  .card {
+    padding: 25px;
+
+    h2 {
+      margin-left: 20px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .review {
+    margin-bottom: 40px;
+  }
+}

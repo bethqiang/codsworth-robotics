@@ -21,8 +21,8 @@ export class ProductReviews extends Component {
   render () {
     if (this.state.currentViewReviews) {
       return (
-        <div className="card product-reviews-box col-xs-10">
-          <strong>User Reviews</strong> | <Link to="#" onClick={this.togglePane}>Write a Review</Link>
+        <div className="card">
+          <h2>User Reviews | <Link to="#" onClick={this.togglePane}>Write a Review</Link></h2>
           {
             (this.props.reviews.length > 0) &&
             (this.props.reviews.map((review, index) => {
@@ -35,8 +35,8 @@ export class ProductReviews extends Component {
       );
     } else {
       return (
-        <div className="card product-reviews-box col-xs-10">
-           <Link to="#" onClick={this.togglePane}>User Reviews</Link> | <strong>Write a Review</strong>
+        <div className="card">
+           <h2><Link to="#" onClick={this.togglePane}>User Reviews</Link> | Write a Review</h2>
           <h3>Write a Review</h3>
         </div>
       );

@@ -36,7 +36,9 @@ const ProductDetail = props => {
             </div>
           </div>
           <div className="row">
-            <ProductReviews />
+            <div className="col-xs-12 reviews">
+              <ProductReviews />
+            </div>
           </div>
         </div>
       )}

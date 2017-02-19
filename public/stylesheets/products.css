@@ -27,3 +27,13 @@
     Change depending on responsiveness needs */ }
       .product-detail .product-info {
         margin-left: 25px; } }
+
+.reviews {
+  margin-top: 30px; }
+  .reviews .card {
+    padding: 25px; }
+    .reviews .card h2 {
+      margin-left: 20px;
+      margin-bottom: 40px; }
+  .reviews .review {
+    margin-bottom: 40px; }
