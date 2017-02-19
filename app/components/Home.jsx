@@ -14,17 +14,17 @@ const Home = props => {
           <h1>Our Top Picks</h1>
         </div>
         <div className="row">
-          {topProducts.map(bot => (
-            <div className="col-md-4" key={bot.id}>
-              <Link to={'/products/' + bot.id}>
+          {topProducts.map(product => (
+            <div key={product.id} className="col-md-4">
+              <Link to={`/products/${product.id}`}>
                 <div className="card">
-                  <img className="card-image" src={bot.images[0]} />
+                  <img className="card-image" src={product.images[0]} />
                   <div className="row">
-                    <div className="col-md-8">
-                      <h3>{bot.name}</h3>
+                    <div className="col-xs-8 col-sm-8 col-md-8">
+                      <h3>{product.name}</h3>
                     </div>
-                    <div className="col-md-4">
-                      <h3 className="pull-right">${priceString(bot.price)}</h3>
+                    <div className="col-xs-8 col-sm-4 col-md-4">
+                      <h3 className="pull-right">${priceString(product.price)}</h3>
                     </div>
                   </div>
                 </div>

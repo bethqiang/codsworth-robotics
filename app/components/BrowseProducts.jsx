@@ -23,19 +23,15 @@ export const BrowseProducts = (props) => {
   }
 
   return (
-    <div className="row">
-      <div>
+    <div className="container products">
+      <div className="center">
+        <h1>All Products</h1>
       </div>
-      {
-        viewProducts &&
-        viewProducts.map(product => {
-          return (
-            <div className="col-md-4 col-xs-12" key={product.id}>
-              <ProductCardView key={product.id} product={product} addToCart={props.addToCart}/>
-            </div>
-          );
-        })
-      }
+      {viewProducts && viewProducts.map(product => (
+        <div className="col-md-4" key={product.id}>
+          <ProductCardView key={product.id} product={product} addToCart={props.addToCart}/>
+        </div>
+      ))}
     </div>
   );
 };
