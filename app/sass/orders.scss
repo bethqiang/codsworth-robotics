@@ -1,48 +1,54 @@
-// currently a little off-center
-// I think because of the cols that are applied to the App component
-.order-container {
+.orders {
+  margin-top: 55px;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-.single-order {
-  border: 2px solid #595959;
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
+  .single-order {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
 
-.order-header {
-  background-color: #595959;
-  color: white;
-  padding: 3px 20px;
+    .order-header {
+      padding: 3px 20px;
+      border-radius: 5px 5px 0 0;
+      border: 2px solid #595959;
+      background-color: #595959;
+      color: #FFFFFF;
 
-  h5 {
-    font-size: 1.125em;
+      h5 {
+        font-size: 1.125em;
+      }
+    }
+
+    .order-subheader {
+      background-color: #F7F7F7;
+      padding: 20px;
+    }
   }
-}
-
-.order-subheader {
-  background-color: #F7F7F7;
-  padding: 20px 20px 10px 20px;
-}
-
-span {
-  margin-right: 5px;
 }
 
 .product-details {
   padding-left: 20px;
   padding-right: 20px;
 
-  img {
-    max-width: 75px;
-    max-height: 75px;
-  }
-
   .single-product {
     padding-top: 20px;
     padding-bottom: 20px;
+
+    img {
+      max-width: 100px;
+      background-color: #FFFFFF;
+    }
+
+    .order-product-name {
+      margin-top: -18.5px;
+    }
+
+    button {
+      display: block;
+      margin-top: -18px;
+    }
   }
 }
 

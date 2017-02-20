@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link, IndexLink, browserHistory } from 'react-router';
+import { Link, IndexLink } from 'react-router';
 import { connect } from 'react-redux';
 
-import { changeSearchValue, submitSearch } from '../reducers/search';
+import { logout } from 'APP/app/reducers/auth';
 
 const Navbar = props => {
   const calcCartQuantity = () => {
@@ -22,11 +22,14 @@ const Navbar = props => {
           <li><Link to="/products">Shop</Link></li>
           <li><Link to={props.user && props.user.id ? '/orders' : '/login'}>Account</Link></li>
           <li><Link to="/cart">Cart {props.cart.products.length > 0 ? `(${calcCartQuantity()})` : null}</Link></li>
+          {props.user && props.user.id ? <li><Link to='/' onClick={props.logout}>Log Out</Link></li> : null}
         </ul>
       </div>
     </nav>
   );
 };
+
+/* ----------------- CONTAINER ------------------ */
 
 const mapStateToProps = state => {
   return {
@@ -36,13 +39,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  handleChange (event) {
-    dispatch(changeSearchValue(event.target.value));
-  },
-  handleSubmit (event) {
-    event.preventDefault();
-    dispatch(submitSearch());
-    browserHistory.push(`/products`);
+  logout () {
+    dispatch(logout());
   }
 });
 
