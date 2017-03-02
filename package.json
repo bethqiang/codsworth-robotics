@@ -4,8 +4,8 @@
   "description": "Need a robot butler? We've got you covered.",
   "main": "index.js",
   "scripts": {
-    "test": "bin/setup && mocha --compilers js:babel-register test/client/*.test.js test/server/*.test.js",
-    "test-watch": "bin/setup && mocha --compilers js:babel-register --watch test/client/*.test.js test/server/*.test.js",
+    "test": "bin/setup && mocha --compilers js:babel-register test/client/*.test.jsx test/server/*.test.js",
+    "test-watch": "bin/setup && mocha --compilers js:babel-register --watch test/client/*.test.jsx test/server/*.test.js",
     "build": "bin/setup && webpack && node-sass public/stylesheets/ -o public/stylesheets/",
     "build-watch": "bin/setup && webpack -w",
     "start": "webpack && bin/setup && nodemon server/start.js",

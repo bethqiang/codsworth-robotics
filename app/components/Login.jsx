@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { login } from 'APP/app/reducers/auth';
 
-const Login = props => {
+export const Login = props => {
   return (
     <div className="container">
       <div className="account">
@@ -36,7 +36,7 @@ const Login = props => {
 
 /* ----------------- CONTAINER ------------------ */
 
-const mapDispatchToProps = dispatch => {
+export const mapDispatchToProps = dispatch => {
   return {
     login (evt) {
       evt.preventDefault();
